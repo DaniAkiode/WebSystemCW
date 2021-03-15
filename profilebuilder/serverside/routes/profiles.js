@@ -6,10 +6,11 @@ router.route('/').get((req, res) => {
         .then(profiles => res.json(profiles))
         .catch(err => res.status(400).json('Error: ' + err));
 });
-router.route("/add").post((req, res) =>{
-    const firstname = req.body.username;
+
+router.route('/send').post((req, res) => {
+    const firstname = req.body.firstname;
     const surname = req.body.surname;
-    const age = Number(req.body.surname);
+    const age = Number(req.body.age);
     const city = req.body.city;
     const hobbies = req.body.hobbies;
 
@@ -18,7 +19,7 @@ router.route("/add").post((req, res) =>{
         surname,
         age,
         city,
-        hobbies,
+        hobbies
     });
 
     newProfile.save()
@@ -42,10 +43,10 @@ router.route('/update/:id').post((req, res) => {
     Profile.findById(req.params.id)
     .then(profile => {
         profile.firstname = req.body.firstname;
-        profile.surname = req.body.description;
-        profile.age = Number(req.body.date);
+        profile.surname = req.body.surname;
+        profile.age = Number(req.body.age);
         profile.city = req.body.city;
-        profile.hobbies = req.body.city;
+        profile.hobbies = req.body.hobbies;
 
         profile.save()
         .then(() => res.json('Profile Updated'))

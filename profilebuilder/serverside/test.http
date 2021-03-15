@@ -1,0 +1,10 @@
+POST http://localhost:4000/profiles/add
+Content-Type: application/json
+
+{
+    "firstname":"Dani",
+    "surname":"Aki",
+    "age":"23",
+    "city":"Aberdeen",
+    "hobbies":"Stressing Over Coursework"
+}
