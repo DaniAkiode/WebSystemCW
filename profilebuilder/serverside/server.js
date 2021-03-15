@@ -12,7 +12,7 @@ app.use(express.json);
 
 const URL = process.env.PROFILE_DATABSE;
 
-mongoose.connect(URL, { useNewUrlParser: true, useCreateIndex: true, })
+mongoose.connect(URL, { useNewUrlParser: true, useCreateIndex: true,  useUnifiedTopology: true})
 .then(() => {
     console.log('Mongo Connected');
 }).catch((err) => {
