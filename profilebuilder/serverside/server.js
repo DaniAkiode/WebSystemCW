@@ -20,11 +20,11 @@ mongoose.connect(URL, { useNewUrlParser: true, useCreateIndex: true,  useUnified
     console.log('Error connecting to mongo');
 });
 
-const personRouter = require('./routes/person');
+//const personRouter = require('./routes/person');
 const profileRouter = require('./routes/profiles');
 
-app.use('/', personRouter);
-/*app.use('/profiles', profileRouter);*/
+//app.use('/', personRouter);
+app.use('/api', profileRouter);
 
 
 app.listen(port, () => {
