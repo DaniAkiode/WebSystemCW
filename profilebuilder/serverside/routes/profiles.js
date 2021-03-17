@@ -1,7 +1,7 @@
 const router = require('express').Router();
 let Profile = require('../models/profile.model');
 
-router.route('/').get((req, res) => {
+router.route('/person').get((req, res) => {
     Profile.find()
         .then(profiles => res.json(profiles))
         .catch(err => res.status(400).json('Error: ' + err));

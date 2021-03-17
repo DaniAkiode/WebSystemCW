@@ -23,8 +23,8 @@ mongoose.connect(URL, { useNewUrlParser: true, useCreateIndex: true,  useUnified
 const personRouter = require('./routes/person');
 const profileRouter = require('./routes/profiles');
 
-app.use('/person', personRouter);
-app.use('/profiles', profileRouter);
+app.use('/', personRouter);
+/*app.use('/profiles', profileRouter);*/
 
 
 app.listen(port, () => {
