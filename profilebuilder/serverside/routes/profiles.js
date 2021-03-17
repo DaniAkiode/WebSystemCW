@@ -8,18 +8,16 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/send').post((req, res) => {
-    const firstname = req.body.firstname;
-    const surname = req.body.surname;
+    const name = req.body.name;
     const age = Number(req.body.age);
     const city = req.body.city;
     const hobbies = req.body.hobbies;
 
     const newProfile = new Profile({
-        firstname,
-        surname,
+        name,
         age,
         city,
-        hobbies
+        hobbies,
     });
 
     newProfile.save()
@@ -42,8 +40,7 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Profile.findById(req.params.id)
     .then(profile => {
-        profile.firstname = req.body.firstname;
-        profile.surname = req.body.surname;
+        profile.name = req.body.name;
         profile.age = Number(req.body.age);
         profile.city = req.body.city;
         profile.hobbies = req.body.hobbies;

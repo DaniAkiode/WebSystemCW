@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json);
@@ -20,10 +20,13 @@ mongoose.connect(URL, { useNewUrlParser: true, useCreateIndex: true,  useUnified
     console.log('Error connecting to mongo');
 });
 
+const personRouter = require('./routes/person');
 const profileRouter = require('./routes/profiles');
 
+app.use('/person', personRouter);
 app.use('/profiles', profileRouter);
 
+
 app.listen(port, () => {
-    console.log(`Server running on port: ${port}`);
+    console.log(`Server running on port: ${port}`)
 })
