@@ -1,6 +1,9 @@
-POST http://localhost:4000/profiles/send
+POST http://localhost:5000/api/add
 Content-Type: application/json
 
 {
-    "name":"Daniel"
+    "name":"Daniel",
+    "age":"23",
+    "city":"Aberdeen",
+    "hobbies": "Making Music"
 }

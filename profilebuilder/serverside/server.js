@@ -5,12 +5,12 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json);
 
-const URL = process.env.PROFILE_DATABSE;
+const URL = process.env.PDB;
 
 
 mongoose.connect(URL, { useNewUrlParser: true, useCreateIndex: true,  useUnifiedTopology: true})
@@ -29,4 +29,4 @@ app.use('/api', profileRouter);
 
 app.listen(port, () => {
     console.log(`Server running on port: ${port}`)
-})
+});
