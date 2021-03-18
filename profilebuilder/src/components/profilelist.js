@@ -59,7 +59,7 @@ export default class ProfileList extends Component {
                             <th>Age</th>
                             <th>City</th>
                             <th>Hobbies</th>
-                            <th>Actions</th>
+                            <th>Options</th>
                         </tr>
                     </thead>
                     <tbody>
