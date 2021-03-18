@@ -47,7 +47,7 @@ export default class CreateProfile extends Component {
         e.preventDefault();
 
         const profile = {
-            name: this.state.username,
+            name: this.state.name,
             age: this.state.age,
             city: this.state.city,
             hobbies: this.state.hobbies
@@ -55,7 +55,7 @@ export default class CreateProfile extends Component {
 
         console.log(profile);
 
-        axios.post('http://localhost:8080/api/add', profile)
+        axios.post('http://localhost:5000/api/add', profile)
         .then(res => console.log(res.data))
 
         window.location = "/";

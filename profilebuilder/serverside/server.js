@@ -10,7 +10,6 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-//mongoose.Promise = global.Promise
 const uri = process.env.PDB;
 
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }).then(() => {
@@ -18,11 +17,6 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }).then(() =
 }).catch((err) => {
     console.error('Error connecting to mongo', err);
 });
-
-//const connection = mongoose.connection; 
-//connection.once('open', () => {
-    //console.log("MongoDB database connection established successfully");
-//})
 
 
 const ProfileRouter = require('./routes/profiles');
