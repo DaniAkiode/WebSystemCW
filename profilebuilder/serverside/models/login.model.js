@@ -8,4 +8,4 @@ const LoginSchema = new mongoose.Schema({
     timestamps: true,
 });
 
-module.exports = mongoose.model('profile', LoginSchema);
+module.exports = mongoose.model('Login', LoginSchema);
