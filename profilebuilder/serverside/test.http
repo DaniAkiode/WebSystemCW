@@ -1,9 +1,7 @@
-POST http://localhost:5000/api/add
+GET http://localhost:5000/api/
 Content-Type: application/json
 
 {
-    "name":"Daniel",
-    "age":"23",
-    "city":"Aberdeen",
-    "hobbies": "Making Music"
+
 }
+
