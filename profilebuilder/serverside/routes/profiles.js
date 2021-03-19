@@ -12,6 +12,7 @@ router.route('/add').post((req, res) => {
     const age = Number(req.body.age);
     const city = req.body.city;
     const hobbies = req.body.hobbies;
+    
 
     const newProfile = new Profile({
         name,

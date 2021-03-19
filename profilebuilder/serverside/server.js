@@ -20,8 +20,10 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }).then(() =
 
 
 const ProfileRouter = require('./routes/profiles');
+const UserAcRouter = require('./routes/signup');
 
 app.use('/api', ProfileRouter);
+app.use('/users', UserAcRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`)
