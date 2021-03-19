@@ -19,7 +19,7 @@ router.route("/signup").post((req, res) => {
         .catch(err => res.status(400).json('Error:' + err));
 });
 
-router.route("/login/:username/:password/").get((req, res) => {
+/*router.route("/login/:username/:password/").get((req, res) => {
     SignUpSchema.find(req.params.id)
     .then(SignUpSchema => {
         SignUpSchema.username = req.body.username;
@@ -27,4 +27,4 @@ router.route("/login/:username/:password/").get((req, res) => {
     
     })
     .catch(err => res.status(400).json('Error:' + err));
-});
+});*/
