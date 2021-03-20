@@ -1,28 +1,35 @@
-const express = require('express')
-const router = express.Router()
+const router = require('express').Router();
 const SignUpSchema = require('../models/signup.model')
-const bcrypt= require('bcrypt')
+const bcrypt = require('bcrypt');
 
-router.post('/signup', async (request, response) => {
+router.route("/signup").post( async (req, res) => {
+        const fullname = req.body.fullname;
+        const username = req.body.username;
+        const email = req.body.email;
 
-    const saltPassword = await bcrypt.genSalt(10)
-    const securePassword = await bcrypt.hash(request.body.password, saltPassword)
+        const saltPassword = await bcrypt.genSalt(10)
+        const password = await bycrypt.hash(req.body.password, saltPassword);
 
-    const NewUser = new SignUpSchema({
-        fullname:request.body.fullname,
-        username:request.body.username,
-        email:request.body.email,
-        password:securePassword
+        const NewUser = new SignUpSchema({
+           fullname,
+           username,
+           email,
+           password 
+        });
+
+        NewUser.save()
+        .then(() => res.json('New User Added In the Inner Circle'))
+        .catch(err => res.status(400).json('Error:' + err));
+});
+
+/*router.route("/login/:username/:password/").get((req, res) => {
+    SignUpSchema.find(req.params.id)
+    .then(SignUpSchema => {
+        SignUpSchema.username = req.body.username;
+        SignUpSchema.password = req.body.password;
+    
     })
+    .catch(err => res.status(400).json('Error:' + err));
+});*/
 
-    NewUser.save()
-    .then(data =>{
-        response.json(data)
-    })
-    .catch(error =>{
-        response.json(error)
-    })
-})
-
-
-module.exports = router
+module.exports = router;
