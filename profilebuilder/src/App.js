@@ -6,6 +6,7 @@ import ProfileList from "./components/profilelist";
 import EditProfile from "./components/editprofile";
 import CreateProfile from "./components/createprofile";
 import LoginPage from "./components/LogInComponent";
+import Dashboard from "./components/DashboardComponent";
 import SignUpPage from "./components/SignUpComponent";
 
 function App() {
@@ -17,8 +18,10 @@ function App() {
         <Route path="/" exact component={ProfileList} />
         <Route path="/edit/:id" exact component={EditProfile} />
         <Route path="/create" exact component={CreateProfile} />
-        <Route path="/signup" exact component={SignUpPage} />
+        <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/login" exact component={LoginPage} />
+        <Route path="/signup" exact component={SignUpPage} />
+
 
       </div>
     </Router>
