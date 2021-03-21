@@ -18,12 +18,13 @@ function App() {
         <Route path="/" exact component={ProfileList} />
         <Route path="/edit/:id" exact component={EditProfile} />
         <Route path="/create" exact component={CreateProfile} />
-        <Route path="/dashboard" exact component={Dashboard} />
         <Route path="/login" exact component={LoginPage} />
         <Route path="/signup" exact component={SignUpPage} />
 
 
+
       </div>
+      <Route path = "/dashboard" exact component={Dashboard}/>
     </Router>
   );
 }
