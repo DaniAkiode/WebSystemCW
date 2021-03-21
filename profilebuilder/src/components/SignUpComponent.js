@@ -49,7 +49,7 @@ export default class SignUpPage extends Component {
             password:this.state.password
         }
 
-        axios.post('http://localhost:5000/user/signup', registered)
+        axios.post('http://localhost:5000/users/signup', registered)
             .then(response => console.log(response.data))
         
         window.location ="/dashboard";
