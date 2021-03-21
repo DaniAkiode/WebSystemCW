@@ -99,7 +99,7 @@ export default class SignUpPage extends Component {
                             />
                         </div>
                         
-                        <input type='submit' className= 'btn btn-danger btn-black' value='Submit'
+                        <input type='submit' className= 'btn btn-success btn-black' value='Submit'
                         />
                     </form>
                 </div>      

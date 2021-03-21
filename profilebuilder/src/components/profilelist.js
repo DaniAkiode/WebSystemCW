@@ -53,12 +53,12 @@ export default class ProfileList extends Component {
             <div>
                 <h3>Profile List</h3>
                 <table className="table">
-                    <thead className="thead-light">
+                    <thead className="thead-dark">
                         <tr>
                             <th>Name</th>
                             <th>Age</th>
                             <th>City</th>
-                            <th>Hobbies</th>
+                            <th>Hobbies</th>    
                             <th>Options</th>
                         </tr>
                     </thead>
