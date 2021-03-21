@@ -3,11 +3,12 @@ const router = express.Router()
 const SignUpSchema = require('../models/signup.model')
 const bcrypt = require('bcrypt')
 
+//Add new user to database 
 router.post('/signup', async (req, res) => {
-
+    //Hash user passwords 
     const saltPassword = await bcrypt.genSalt(10)
     const securePassword = await bcrypt.hash(req.body.password, saltPassword)
-
+    
     const NewUser = new SignUpSchema({
         fullname:req.body.fullname,
         username:req.body.username,

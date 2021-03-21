@@ -1,3 +1,5 @@
+//Declare Vairables 
+
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
@@ -7,8 +9,11 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
 
+//Middleware
 app.use(cors());
 app.use(express.json());
+
+//Connect to Mongo
 
 const uri = process.env.PDB;
 
@@ -18,7 +23,7 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }).then(() =
     console.error('Error connecting to mongo', err);
 });
 
-
+//Add routers 
 const ProfileRouter = require('./routes/profiles');
 const UserAcRouter = require('./routes/signup');
 

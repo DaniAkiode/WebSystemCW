@@ -4,7 +4,7 @@ import axios from 'axios';
 export default class EditProfile extends Component {
     constructor(props) {
         super(props);
-
+        //binds 'this' to connect with the methods and the constructor
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeAge = this.onChangeAge.bind(this);
         this.onChangeCity = this.onChangeCity.bind(this);
@@ -12,7 +12,7 @@ export default class EditProfile extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
 
-
+        //Create Properties
         this.state = {
             name: "",
             age: 0,
@@ -20,7 +20,8 @@ export default class EditProfile extends Component {
             hobbies:"",
         }
     }
-
+    //When the component is running, this function would be called first.
+    //When called it would get the data of an id from the database 
     componentDidMount(){
         axios.get('http://localhost:5000/api/'+this.props.match.params.id)
             .then(response => {
@@ -32,32 +33,34 @@ export default class EditProfile extends Component {
                 })
             })
     }
-
+    //Set State when name is changed 
     onChangeName(e) {
         this.setState({
             name: e.target.value
         });
     }
-
+    //Set State when Age is changed 
     onChangeAge(e){
         this.setState({
             age: e.target.value
         });
     }
+    //Set State when City is changed   
     onChangeCity(e){
         this.setState({
             city: e.target.value
         });
     }
-
+    //Set State when Hobbies is changed
     onChangeHobbies(e){
         this.setState({
             hobbies: e.target.value 
         })
     }
+    //When user clicks submitm this function will be called, 
     onSubmit(e) {
         e.preventDefault();
-
+        //Declare new data from the form 
         const profile = {
             name: this.state.name,
             age: this.state.age,
@@ -66,14 +69,14 @@ export default class EditProfile extends Component {
         }
 
         console.log(profile);
-
+        //Send updated data to the Mongo Database 
         axios.post('http://localhost:5000/api/update/'+this.props.match.params.id, profile)
         .then(res => console.log(res.data))
-
+        //Direct user back to the profile list 
         window.location = "/";
     }
 
-
+    //Render form
     render() {
         return (
             <div>

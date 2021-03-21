@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios'; 
 
+//Declare properties from database
 const Profiles = props => (
     <tr>
         <td>{props.profile.name}</td>
@@ -18,12 +19,14 @@ const Profiles = props => (
 export default class ProfileList extends Component {
     constructor(props) {
         super(props);
-
+        //binds 'this' to connect with the methods and the constructor
         this.deleteProfile = this.deleteProfile.bind(this);
 
         this.state = {profiles: []};
     }
 
+    //When the component is running, this function would be called first.
+    //When called it would display the profiles from the database. 
     componentDidMount() {
         axios.get('http://localhost:5000/api/')
             .then(response => {
@@ -33,6 +36,7 @@ export default class ProfileList extends Component {
                 console.log(error);
             })
     }
+    //Function called to delete profile by id     
     deleteProfile(id) {
         axios.delete('http://localhost:5000/api/'+id)
             .then(res => console.log(res.data));
@@ -42,12 +46,13 @@ export default class ProfileList extends Component {
         })
     }
 
+    //Function displays a list of profiles 
     profileList() {
         return this.state.profiles.map(currentprofiles => {
             return <Profiles profile={currentprofiles} deleteProfile={this.deleteProfile} key={currentprofiles._id}/>;
         })
     }
-
+    //Display Table 
     render() {
         return (
             <div>

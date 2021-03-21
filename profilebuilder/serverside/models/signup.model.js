@@ -1,6 +1,7 @@
+//Require Mongoose
 const mongoose = require("mongoose");
 
-
+//Create new schema for Database
 const SignUpSchema = new mongoose.Schema({
     fullname:{type: String, required: true},
     username: {type: String, required: true},
