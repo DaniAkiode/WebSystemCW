@@ -79,7 +79,7 @@ export default class EditProfile extends Component {
     //Render form
     render() {
         return (
-            <div>
+            <div className="container">
                 <h3>Edit Profile</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">

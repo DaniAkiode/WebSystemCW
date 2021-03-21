@@ -16,13 +16,13 @@ function App() {
         <Navbar/>
         <br/>
         <Route path="/" exact component={ProfileList} />
-        <Route path="/edit/:id" exact component={EditProfile} />
         <Route path="/create" exact component={CreateProfile} />
         <Route path="/signup" exact component={SignUpPage} />
 
 
 
       </div>
+      <Route path="/edit/:id" exact component={EditProfile} />
       <Route path = "/dashboard" exact component={Dashboard}/>
     </Router>
   );
