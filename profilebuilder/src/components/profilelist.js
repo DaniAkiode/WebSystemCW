@@ -28,7 +28,7 @@ export default class ProfileList extends Component {
     //When the component is running, this function would be called first.
     //When called it would display the profiles from the database. 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/')
+        axios.get('https://murmuring-sands-45502.herokuapp.com/api/')
             .then(response => {
                 this.setState({ profiles: response.data })
             })
@@ -38,7 +38,7 @@ export default class ProfileList extends Component {
     }
     //Function called to delete profile by id     
     deleteProfile(id) {
-        axios.delete('http://localhost:5000/api/'+id)
+        axios.delete('https://murmuring-sands-45502.herokuapp.com//api/'+id)
             .then(res => console.log(res.data));
 
         this.setState({

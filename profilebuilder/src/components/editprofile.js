@@ -23,7 +23,7 @@ export default class EditProfile extends Component {
     //When the component is running, this function would be called first.
     //When called it would get the data of an id from the database 
     componentDidMount(){
-        axios.get('http://localhost:5000/api/'+this.props.match.params.id)
+        axios.get('https://murmuring-sands-45502.herokuapp.com/api/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     name: response.data.name,
@@ -70,7 +70,7 @@ export default class EditProfile extends Component {
 
         console.log(profile);
         //Send updated data to the Mongo Database 
-        axios.post('http://localhost:5000/api/update/'+this.props.match.params.id, profile)
+        axios.post('https://murmuring-sands-45502.herokuapp.com/api/update/'+this.props.match.params.id, profile)
         .then(res => console.log(res.data))
         //Direct user back to the profile list 
         window.location = "/";

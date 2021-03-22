@@ -55,7 +55,7 @@ export default class SignUpPage extends Component {
             password:this.state.password
         }
         //Send data to the Mongo Database
-        axios.post('http://localhost:5000/users/signup', registered)
+        axios.post('https://murmuring-sands-45502.herokuapp.com/users/signup', registered)
             .then(response => console.log(response.data))
         //Direct user back to the dashboard        
         window.location ="/dashboard";

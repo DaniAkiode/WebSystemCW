@@ -58,7 +58,7 @@ export default class CreateProfile extends Component {
 
         console.log(profile);
         //Send data to the Mongo Database 
-        axios.post('http://localhost:5000/api/add', profile)
+        axios.post('https://murmuring-sands-45502.herokuapp.com/api/add', profile)
         .then(res => console.log(res.data))
         //Direct user back to the profile list 
         window.location = "/";
