@@ -1,0 +1,4 @@
+Accime, E., 2021. How to deploy a MERN Stack App to Heroku. [online] Youtube.com. Available at: <https://www.youtube.com/watch?v=5PaUiPyBDJY&list=PLUAP7Jc-AKBH-8ViMJrgzBZK07XTh4q-a&index=43> [Accessed 22 March 2021].
+freeCodeCamp.com, f., 2019. Learn the MERN Stack - Full Tutorial (MongoDB, Express, React, Node.js). [online] Youtube.com. Available at: <https://www.youtube.com/watch?v=7CqJlxBYj-M&list=PLUAP7Jc-AKBEkqSCjRkkzwC6D_19K24tm&index=4> [Accessed 22 March 2021].
+Sinclair, J., 2021. How To Deploy a MERN App With Heroku. [online] Youtube.com. Available at: <https://www.youtube.com/watch?v=bxZxBeK20zE&t=207s> [Accessed 22 March 2021].
+Solutions, M., 2021. Full Stack React, Node & MongoDB - Build A Sign Up Application (React, Node.js, Express and MongoDB). [online] Youtube.com. Available at: <https://www.youtube.com/watch?v=SQqSMDIzhaE&list=PLUAP7Jc-AKBH-8ViMJrgzBZK07XTh4q-a&index=67> [Accessed 22 March 2021].
