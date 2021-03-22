@@ -27,6 +27,10 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }).then(() =
 const ProfileRouter = require('./routes/profiles');
 const UserAcRouter = require('./routes/signup');
 
+if (process.env.NODE_ENV ==='production') {
+    app.use(express.static('build'));
+}
+
 app.use('/api', ProfileRouter);
 app.use('/users', UserAcRouter);
 
