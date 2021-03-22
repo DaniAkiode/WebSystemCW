@@ -23,7 +23,7 @@ function App() {
 
       </div>
       <Route path="/edit/:id" exact component={EditProfile} />
-      <Route path ="/dashboard" exact component={Dashboard} />
+      <Route path ="https://murmuring-sands-45502.herokuapp.com/dashboard" exact component={Dashboard} />
     </Router>
   );
 }

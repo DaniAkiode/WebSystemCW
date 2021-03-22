@@ -58,7 +58,7 @@ export default class SignUpPage extends Component {
         axios.post('https://murmuring-sands-45502.herokuapp.com/users/signup', registered)
             .then(response => console.log(response.data))
         //Direct user back to the dashboard        
-        window.location = "/dashboard";
+        window.location = "https://murmuring-sands-45502.herokuapp.com/dashboard";
     }
 
     //Render form

@@ -38,7 +38,7 @@ export default class ProfileList extends Component {
     }
     //Function called to delete profile by id     
     deleteProfile(id) {
-        axios.delete('https://murmuring-sands-45502.herokuapp.com//api/'+id)
+        axios.delete('https://murmuring-sands-45502.herokuapp.com/api/'+id)
             .then(res => console.log(res.data));
 
         this.setState({
