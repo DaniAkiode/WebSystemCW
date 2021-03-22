@@ -17,7 +17,7 @@ app.use(express.json());
 
 const uri = process.env.PDB;
 
-mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }).then(() => {
+mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).then(() => {
     console.log('connected to mongo!');
 }).catch((err) => {
     console.error('Error connecting to mongo', err);
